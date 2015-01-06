@@ -11,6 +11,9 @@
 build.properties
 build.xml
 
+# Mac why #
+*.DS_Store
+
 # Compiled Object files
 *.slo
 *.lo
