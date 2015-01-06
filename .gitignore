@@ -42,6 +42,4 @@
 *.gch
 
 # Eclipse files
-.project
-.cproject
 .metadata/
