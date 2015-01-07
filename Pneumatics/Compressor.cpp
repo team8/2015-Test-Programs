@@ -23,6 +23,7 @@ class Compressor : public IterativeRobot {
 };
 
 Compressor::Compressor():
+//I don't know the pressureSwitchChannel or the Pressure Switch Channel, so this instance of a compressor needs to be fixed.
 	compressor((uint32_t)423, (uint32_t)432),
 	stick((uint32_t)423),
 {
