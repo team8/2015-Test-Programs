@@ -23,7 +23,7 @@ void Mecanum::init() {
 }
 
 void Mecanum::disable() {
-	state = OFF:
+	state = OFF;
 }
 
 void Mecanum::update() {
