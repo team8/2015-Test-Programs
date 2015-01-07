@@ -1,47 +1,39 @@
-#include "WPILib.h"
-
-/**
- * This is a demo program showing how to use Mecanum control with the RobotDrive class.
+#include "WPILib.h"/**
+ * Simplest program to drive a robot with mecanum drive using a single Logitech
+ * Extreme 3D Pro joystick and 4 drive motors connected as follows:
+ *   - Digital Sidecar 1:
+ *     - PWM 1 - Connected to front left drive motor
+ *     - PWM 2 - Connected to rear left drive motor
+ *     - PWM 3 - Connected to front right drive motor
+ *     - PWM 4 - Connected to rear right drive motor
  */
-class Robot: public SampleRobot {
 
-	// Channels for the wheels
-	const static int frontLeftChannel = 2;
-	const static int rearLeftChannel = 3;
-	const static int frontRightChannel = 1;
-	const static int rearRightChannel = 0;
+Mecanum::Mecanum() :
+//Replace with actual port numbers of the talons
+	leftFront( (uint32_t) 5),
+	leftBack( (uint32_t) 1),
+	rightFront( (uint32_t) 6),
+	rightBack( (uint32_t) 2)
+{
 
-	const static int joystickChannel = 0;
+}
 
-	RobotDrive robotDrive;	//robot drive system
-	Joystick stick;		//only joystick
+void Mecanum::init() {
+	state = ON;
+}
 
-public:
-	Robot() :
-			robotDrive(frontLeftChannel, rearLeftChannel, frontRightChannel,
-					rearRightChannel),// these must be initialized in the same order
-			stick(joystickChannel)				// as they are declared above.
-	{
-		robotDrive.SetExpiration(0.1);
-		robotDrive.SetInvertedMotor(RobotDrive::kFrontLeftMotor, true);	// invert the left side motors
-		robotDrive.SetInvertedMotor(RobotDrive::kRearLeftMotor, true);// you may need to change or remove this to match your robot
+void Mecanum::disable() {
+	state = OFF:
+}
+
+void Mecanum::update() {
+	switch(state) {
+	case ON:
+		break;
+	case OFF:
+		leftFront.Set(0);
+		leftBack.Set(0);
+		rightFront.Set(0);
+		rightBack.Set(0);
 	}
-
-	/**
-	 * Runs the motors with Mecanum drive.
-	 */
-	void OperatorControl() {
-		robotDrive.SetSafetyEnabled(false);
-		while (IsOperatorControl() && IsEnabled()) {
-			// Use the joystick X axis for lateral movement, Y axis for forward movement, and Z axis for rotation.
-			// This sample does not use field-oriented drive, so the gyro input is set to zero.
-			robotDrive.MecanumDrive_Cartesian(stick.GetX(), stick.GetY(),
-					stick.GetZ());
-
-			Wait(0.005); // wait 5ms to avoid hogging CPU cycles
-		}
-	}
-
-};
-
-START_ROBOT_CLASS(Robot);
+}
