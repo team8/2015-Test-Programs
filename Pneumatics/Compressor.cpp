@@ -60,11 +60,11 @@ void Compressor::TeleopPeriodic() {
 	//When you press button four it changes if the compressor is started or not
 	
 	if(stick.GetRawButton((uint32_t)4) && !justPressed) {
-		if(compressor.enabled()) {
-			compressor.stop;
+		if(compressor.Enabled()) {
+			compressor.Stop();
 		}
-		else if(!compressor.enabled()) {
-			compressor.start; 	
+		else if(!compressor.Enabled()) {
+			compressor.Start(); 	
 		}
 	}
   
