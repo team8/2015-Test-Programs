@@ -3,7 +3,7 @@
 
 Pneumatics
 Programmers:
-Julian Knodt,
+Julian Knodt, Eric Liu, Ben Cohen-Wang
 
 Projects:
 
@@ -15,8 +15,16 @@ Compressor
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Double Solenoid:
-Programmers: Julian Knodt,
+Programmers: 
+
+Julian Knodt
 Started: 1/6/15
+
+Eric Liu
+Started: 1/8/15
+
+Ben Cohen-Wang
+Started: 1/8/15
 
 Purpose:
 For the double solenoid, we want to make it such that the buttons on the joystick will cause the solenoid to change
