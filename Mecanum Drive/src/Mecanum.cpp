@@ -26,7 +26,7 @@ Mecanum::Mecanum() :
 		driveStick(new Joystick((uint32_t) 4)), turnStick(
 				new Joystick((uint32_t) 2)) {
 	driveStick->SetAxisChannel(Joystick::kTwistAxis, 3);
-	robotDrive = new RobotDrive(1,2,3,4);
+	robotDrive = new RobotDrive(10, 9, 1, 2);
 }
 /**
  * Gets called once for each new packet from the DS.
