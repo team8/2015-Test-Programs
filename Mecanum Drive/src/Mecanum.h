@@ -20,6 +20,13 @@ private:
 	float xSpeed;
 	float ySpeed;
 	float rotation;
+	
+	// Victors
+	Victor frontLeftV;
+	Victor frontRightV;
+	Victor backLeftV;
+	Victor backRightV;
+
 public:
 	Mecanum();
 	void update();
@@ -28,6 +35,7 @@ public:
 	void setY(float speed);
 	void setRotation(float rotate);
 	void setAuto(bool autonomous);
+	void setVic(int vicNum, double val);
 };
 
 #endif

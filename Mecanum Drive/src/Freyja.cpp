@@ -60,6 +60,7 @@ void Freyja::TeleopInit() {
 }
 
 void Freyja::TeleopPeriodic() {
+	std::cout << "Teleop Periodic";
 	//humanController.update();
 	robot.drivetrain.setAuto(false);
 	robot.update();

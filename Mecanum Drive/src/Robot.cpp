@@ -5,17 +5,18 @@
  *      Author: EngTechP7
  */
 
-#include <Robot.h>
+#include "Robot.h"
 #include "Mecanum.h"
 
-Robot::Robot()
+Robot::Robot() : 
+	drivetrain()
 {
-
 }
 
 void Robot::init() {
 	std::cout << "Robot init";
-	drivetrain.disable();
+	//MecanumDrive_Cartesian(xSpeed, ySpeed, rotation);
+	//drivetrain.disable();
 }
 
 void Robot::update() {
