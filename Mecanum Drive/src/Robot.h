@@ -10,15 +10,16 @@
 #include "Mecanum.h"
 
 class Robot {
-private:
-	Mecanum drivetrain;
-	//More subystems here
 public:
 	Robot();
+	virtual ~Robot();
+
 	void init();
 	void update();
 	void disable();
-	virtual ~Robot();
+
+	Mecanum drivetrain;
+	//More subystems here
 };
 
 #endif /* SRC_ROBOT_H_ */

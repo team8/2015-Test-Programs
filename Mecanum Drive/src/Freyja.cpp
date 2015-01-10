@@ -39,6 +39,7 @@ void Freyja::AutonomousInit() {
 
 void Freyja::AutonomousPeriodic() {
 	//autoController.update();
+	robot.drivetrain.setAuto(true);
 	robot.update();
 }
 
@@ -60,6 +61,7 @@ void Freyja::TeleopInit() {
 
 void Freyja::TeleopPeriodic() {
 	//humanController.update();
+	robot.drivetrain.setAuto(false);
 	robot.update();
 }
 

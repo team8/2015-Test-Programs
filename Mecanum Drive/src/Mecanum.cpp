@@ -4,9 +4,9 @@
 
 //Initializes the joysticks and state
 Mecanum::Mecanum() :
-	driveStick(new Joystick((uint32_t) 4)),
-	turnStick(new Joystick((uint32_t) 2)),
-	state(AUTONOMOUS), xSpeed(0),
+	driveStick(new Joystick((uint32_t) DRIVE_STICK)),
+	turnStick(new Joystick((uint32_t) TURN_STICK)),
+	state(TELEOP), xSpeed(0),
 	ySpeed(0), rotation(0)
 {
 	robotDrive = new RobotDrive(TALON_LEFT_FRONT,
@@ -22,10 +22,12 @@ Mecanum::Mecanum() :
 void Mecanum::update() {
 	switch(state) {
 	case AUTONOMOUS:
+		std::cout << "Autonomous mode";
 		robotDrive->
 		MecanumDrive_Cartesian(xSpeed, ySpeed, rotation);
 		break;
 	case TELEOP:
+		std::cout << "Teleop mode";
 		robotDrive->
 		MecanumDrive_Cartesian(driveStick->GetX(),
 			driveStick->GetY(),
@@ -35,6 +37,7 @@ void Mecanum::update() {
 }
 
 void Mecanum::disable() {
+	std::cout << "Disabled";
 	robotDrive->MecanumDrive_Cartesian(0, 0, 0);
 }
 
@@ -48,4 +51,13 @@ void Mecanum::setY(float speed) {
 
 void Mecanum::setRotation(float rotate) {
 	rotation = rotate;
+}
+
+void Mecanum::setAuto(bool autonomous) {
+	if(autonomous) {
+		state = AUTONOMOUS;
+	}
+	else {
+		state = TELEOP;
+	}
 }

@@ -27,6 +27,7 @@ public:
 	void setX(float speed);
 	void setY(float speed);
 	void setRotation(float rotate);
+	void setAuto(bool autonomous);
 };
 
 #endif

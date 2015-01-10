@@ -6,21 +6,26 @@
  */
 
 #include <Robot.h>
+#include "Mecanum.h"
 
-Robot::Robot() :
-	Mecanum() {
+Robot::Robot()
+{
+
 }
 
 void Robot::init() {
-
+	std::cout << "Robot init";
+	drivetrain.disable();
 }
 
 void Robot::update() {
-
+	std::cout << "Robot update";
+	drivetrain.update();
 }
 
 void Robot::disable() {
-
+	std::cout << "Robot disable";
+	drivetrain.disable();
 }
 
 Robot::~Robot() {
