@@ -18,6 +18,7 @@ Mecanum::Mecanum() :
 }
 
 void Mecanum::TeleopPeriodic(void) {
+	std::printf("Updating");
 	robotDrive -> MecanumDrive_Cartesian(driveStick->GetX(), driveStick->GetY(),
 			turnStick->GetX());
 }
