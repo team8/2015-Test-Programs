@@ -1,10 +1,10 @@
-#define <WPILib>
-
-class Solenoid : public IterativeRobot {
+#include <WPILib.h>
+#include <iostream>
+class SolenoidRobot : public IterativeRobot {
 
   public:
-    Solenoid();
-    void RobotInit();
+    SolenoidRobot();
+      void RobotInit();
 	  void AutonomousInit();
 	  void AutonomousPeriodic();
 	  void AutonomousDisabled();
@@ -20,49 +20,54 @@ class Solenoid : public IterativeRobot {
     Joystick stick;
     bool justPressedFR;	//forward/reverse
     bool justPressedOF; //on/off
+    Talon talon;
 
 };
 
-Solenoid::Solenoid():
-	solenoid((uint32_t)423, (uint32_t)432),
-	stick((uint32_t)423) 
+SolenoidRobot::SolenoidRobot():
+	solenoid((uint32_t)0, (uint32_t)1),
+	stick((uint32_t)0),
+	talon((uint32_t)9)
 	{
 		justPressedFR = false;
 		justPressedOF = false;
 	}
 
-void Solenoid::RobotInit() {
+void SolenoidRobot::RobotInit() {
 
 }
 
-void Solenoid::AutonomousInit() {
+void SolenoidRobot::AutonomousInit() {
 
 }
 
-void Solenoid::AutonomousPeriodic() {
+void SolenoidRobot::AutonomousPeriodic() {
 
 }
 
-void Solenoid::AutonomousDisabled() {
+void SolenoidRobot::AutonomousDisabled() {
 }
 
-void Solenoid::DisabledInit() {
-
-}
-
-void Solenoid::DisabledPeriodic() {
+void SolenoidRobot::DisabledInit() {
 
 }
 
-void Solenoid::TeleopInit() {
+void SolenoidRobot::DisabledPeriodic() {
 
 }
 
-void Solenoid::TeleopPeriodic() {
+void SolenoidRobot::TeleopInit() {
+
+}
+
+void SolenoidRobot::TeleopPeriodic() {
 	//When you press button two it changes the solenoid value
+	talon.Set(-1.0);
 	
 	if(stick.GetRawButton((uint32_t)2) && !justPressedFR) {
+		std::cout << "raw button 2" << std::endl;
 		if(solenoid.Get() == DoubleSolenoid::Value::kForward) {
+			std::cout << "raw button 2 kforward" << std::endl;
 			solenoid.Set(DoubleSolenoid::Value::kReverse); 	
 		}
 		else if(solenoid.Get() == DoubleSolenoid::Value::kReverse) {
@@ -70,26 +75,27 @@ void Solenoid::TeleopPeriodic() {
 		}
 	}
   if(stick.GetRawButton((uint32_t)3) && !justPressedOF) {
-		if(solenoid.Get() == DoubleSolenoid::Value::kOn) {
+	  std::cout << "raw button 3" << std::endl;
+		if(solenoid.Get() == DoubleSolenoid::Value::kForward) {
 			solenoid.Set(DoubleSolenoid::Value::kOff); 	
 		}
 		else if(solenoid.Get() == DoubleSolenoid::Value::kOff) {
-			solenoid.Set(DoubleSolenoid::Value::kOn); 	
+			solenoid.Set(DoubleSolenoid::Value::kForward);
 		}
 	}
 	justPressedFR = stick.GetRawButton((uint32_t)2);
 	justPressedOF = stick.GetRawButton((uint32_t)3);
 }
 
-void Solenoid::TeleopDisabled() {
+void SolenoidRobot::TeleopDisabled() {
 
 }
 
-void Solenoid::TestInit() {
+void SolenoidRobot::TestInit() {
 }
 
-void Solenoid::TestPeriodic() {
+void SolenoidRobot::TestPeriodic() {
 	
 }
 
-START_ROBOT_CLASS(Solenoid);
+START_ROBOT_CLASS(SolenoidRobot);
