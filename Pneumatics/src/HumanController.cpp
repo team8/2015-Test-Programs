@@ -11,7 +11,19 @@ HumanController::HumanController(Robot *robot):
 
 void HumanController::update()
 {
-
+	if(operatorController.getRawButton((uint32_t) ARM_FORWARD_BUTTON))
+	{
+		this->robot.setArmState(EXTENDING);
+	}
+	
+	if(operatorController.getRawButton((uint32_t) ARM_REVERSE_BUTTON))
+	{
+		this->robot.setArmState(RETRACTING);
+	}
+	else
+	{
+		this.robot.setArmState(IDLE);
+	}
 }
 
 
