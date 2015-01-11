@@ -11,9 +11,12 @@ class Robot
 
 	public:
 		Robot();
+
 		void init();
 		void update();
 		void disable();
+
+		void setArmState(Arm::State state);
 };
 
 #endif

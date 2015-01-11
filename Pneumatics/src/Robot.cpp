@@ -20,3 +20,8 @@ void Robot::disable()
 {
 	arm.disable();
 }
+
+void Robot::setArmState(Arm::State state)
+{
+
+}
