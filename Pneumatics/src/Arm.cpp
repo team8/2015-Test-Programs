@@ -4,11 +4,9 @@
 #include "SolenoidRobot.cpp"
 
 
-class Arm : public IterativeRobot {
+class Arm : public IterativeRobot
+{
 	private:
-		Arm::Arm()
-		{
-
-		}
+		Arm();
 	public:
 };
