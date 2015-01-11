@@ -11,11 +11,32 @@ Arm::Arm():
 
 void Arm::setState(State state)
 {
-
+	this -> state = state;
 }
 
 void Arm::disable()
 {
-	solenoid.Set(DoubleSolenoid::Value::kOff);
-	compressor.Stop();
+	setState(IDLE);
+}
+
+void Arm::update()
+{
+	switch(state)
+	{
+		case EXTENDING: 
+			compressor.Start();
+			solenoid.Set(DoubleSolenoid::Value::kForward);
+		case RETRACTING:
+			compressor.Start();
+			solenoid.Set(DoubleSolenoid::Value::kReverse);
+		case: IDLE
+			compressor.Stop();
+			solenoid.Set(DoubleSolenoid::Value::kOff);
+	}
+	
+}
+
+void Arm::init()
+{
+	setState(IDLE);
 }
