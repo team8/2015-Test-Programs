@@ -21,8 +21,7 @@ class Arm : public IterativeRobot
 	public:
 		Arm();
 		void setState(State state);
-		void disable();
-		void enable();
 		void update();
 
+		void disable();
 };
