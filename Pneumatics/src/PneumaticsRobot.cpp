@@ -7,7 +7,7 @@ class PneumaticsRobot : public IterativeRobot
 		Robot robot;
 
 	public:
-		PIDRobot();
+		PneumaticsRobot();
 		void RobotInit();
 		void AutonomousInit();
 		void AutonomousPeriodic();
