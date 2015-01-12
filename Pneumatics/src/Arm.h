@@ -1,7 +1,7 @@
 #include <WPILib.h>
 #include <iostream>
 
-class Arm : public IterativeRobot
+class Arm
 {
 	public:
 		enum State

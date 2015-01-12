@@ -1,6 +1,6 @@
+#include <Arm.h>
 #include <WPILib.h>
 #include <iostream>
-#include "Arm.h"
 
 Arm::Arm():
 	compressor((uint32_t) 0),
@@ -26,14 +26,16 @@ void Arm::update()
 		case EXTENDING: 
 			compressor.Start();
 			solenoid.Set(DoubleSolenoid::Value::kForward);
+			break;
 		case RETRACTING:
 			compressor.Start();
 			solenoid.Set(DoubleSolenoid::Value::kReverse);
-		case: IDLE
+			break;
+		case IDLE:
 			compressor.Stop();
 			solenoid.Set(DoubleSolenoid::Value::kOff);
+			break;
 	}
-	
 }
 
 void Arm::init()

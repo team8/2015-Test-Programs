@@ -1,8 +1,8 @@
 #ifndef ROBOT_H
 #define ROBOT_H
+#include <Arm.h>
 #include <WPILib.h>
 #include "Constants.h"
-#include "Arm.h"
 
 class Robot
 {
