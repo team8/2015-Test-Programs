@@ -1,7 +1,7 @@
 #include <WPILib.h>
 #include "Robot.h"
 
-class PIDRobot : public IterativeRobot
+class PneumaticsRobot : public IterativeRobot
 {
 	private:
 		Robot robot;
@@ -21,68 +21,68 @@ class PIDRobot : public IterativeRobot
 		void TestPeriodic();
 };
 
-PIDRobot::PIDRobot():
-	robot()
+PneumaticsRobot::PneumaticsRobot():
+	robot();
 {
 
 }
 
-void PIDRobot::RobotInit()
-{
-	robot.init();
-}
-
-void PIDRobot::AutonomousInit()
+void PneumaticsRobot::RobotInit()
 {
 	robot.init();
 }
 
-void PIDRobot::AutonomousPeriodic()
+void PneumaticsRobot::AutonomousInit()
+{
+	robot.init();
+}
+
+void PneumaticsRobot::AutonomousPeriodic()
 {
 	robot.update();
 }
 
-void PIDRobot::AutonomousDisabled()
+void PneumaticsRobot::AutonomousDisabled()
 {
 
 }
 
-void PIDRobot::DisabledInit()
+void PneumaticsRobot::DisabledInit()
 {
 	robot.disable();
 }
 
-void PIDRobot::DisabledPeriodic()
-{
-	robot.disable();
-	robot.update();
-}
-
-void PIDRobot::TeleopInit()
-{
-	robot.init();
-}
-
-void PIDRobot::TeleopPeriodic()
-{
-	robot.update();
-}
-
-void PIDRobot::TeleopDisabled()
+void PneumaticsRobot::DisabledPeriodic()
 {
 	robot.disable();
 	robot.update();
 }
 
-void PIDRobot::TestInit()
+void PneumaticsRobot::TeleopInit()
+{
+	robot.init();
+}
+
+void PneumaticsRobot::TeleopPeriodic()
+{
+	robot.update();
+}
+
+void PneumaticsRobot::TeleopDisabled()
+{
+	robot.disable();
+	robot.update();
+}
+
+void PneumaticsRobot::TestInit()
 {
 
 }
-void PIDRobot::TestPeriodic()
+void PneumaticsRobot::TestPeriodic()
 {
 
 }
-START_ROBOT_CLASS(PIDRobot);
+START_ROBOT_CLASS(PneumaticsRobot);
 
 
 
