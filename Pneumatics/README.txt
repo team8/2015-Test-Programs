@@ -43,6 +43,10 @@ Everything.
 
 Compressor:
 Programmers:
-Started:
+Ben Cohen-Wang
+Started 1/8/15
+Eric Liu
+Started 1/8/15
 
 Purpose:
+Turn on a compressor and regulate it based on user input.
