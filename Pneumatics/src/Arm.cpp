@@ -1,10 +1,10 @@
-#include <Arm.h>
+#include "Arm.h"
 #include <WPILib.h>
 #include <iostream>
 
 Arm::Arm():
-	compressor((uint32_t) 0),
-	solenoid((uint32_t) 0, (uint32_t) 0)
+	compressor(),
+	solenoid((uint32_t) 0, (uint32_t) 1)
 {
 	setState(IDLE);
 }
@@ -21,6 +21,7 @@ void Arm::disable()
 
 void Arm::update()
 {
+
 	switch(state)
 	{
 		case EXTENDING: 

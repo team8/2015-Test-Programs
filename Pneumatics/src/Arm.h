@@ -1,26 +1,27 @@
+#ifndef ARM_H
+#define ARM_H
+
 #include <WPILib.h>
 #include <iostream>
 
-class Arm
-{
-	public:
-		enum State
-		{
-			EXTENDING,
-			RETRACTING,
-			IDLE
-		};
+class Arm {
+public:
+	enum State {
+		EXTENDING, RETRACTING, IDLE
+	};
 
-		Arm();
+	Arm();
 
-		void setState(State state);
-		void init();
-		void update();
-		void disable();
+	void setState(State state);
+	void init();
+	void update();
+	void disable();
 
-	private:
-		Compressor compressor;
-		DoubleSolenoid solenoid;
+private:
+	Compressor compressor;
+	DoubleSolenoid solenoid;
 
-		State state;
+	State state;
 };
+
+#endif

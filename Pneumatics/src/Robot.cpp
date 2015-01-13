@@ -1,4 +1,6 @@
 #include "Robot.h"
+#include "Arm.h"
+#include <WPILib.h>
 
 Robot::Robot():
 	arm()
@@ -23,5 +25,5 @@ void Robot::disable()
 
 void Robot::setArmState(Arm::State state)
 {
-
+	arm.setState(state);
 }
