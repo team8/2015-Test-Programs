@@ -19,10 +19,8 @@ Programmers:
 
 Julian Knodt
 Started: 1/6/15
-
 Eric Liu
 Started: 1/8/15
-
 Ben Cohen-Wang
 Started: 1/8/15
 
@@ -33,10 +31,7 @@ direction, turn off, turn on, etc.
 Solenoids will make it easy for us to use pneumatics without having to have an excessive number of relays.
 
 Progress:
-Just started. If you would like to help with the project, contact the programmer(s).
-
-Bugs:
-Everything.
+Code completed, requires testing on the roboRio
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
