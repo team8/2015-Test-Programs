@@ -1,4 +1,4 @@
-----------If you edit the program, please edit the README. Thanks, -Programmer------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------If you edit the program, please edit the README. Thanks, -Programmer------------------------------------------Important:We are currently waiting on a Pressure Switch to arrive in the mail. In the meantime, Pneumatics is on hold.-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 Pneumatics
@@ -45,3 +45,8 @@ Started 1/8/15
 
 Purpose:
 Turn on a compressor and regulate it based on user input.
+
+Progress:
+We have the necessary code to make it run, but we are facing technical issues, with a lack of power coming into the compressor.
+Hopefully, when we get the pressure switch, we should know if it works or not.
+Additionally, we need to unbind the compressor from the solenoid.
