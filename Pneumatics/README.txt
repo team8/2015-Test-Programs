@@ -31,8 +31,9 @@ direction, turn off, turn on, etc.
 Solenoids will make it easy for us to use pneumatics without having to have an excessive number of relays.
 
 Progress:
-Code completed, requires testing on the roboRio
-
+1. Code completed
+2. Testing Completed and it worked.
+We need to integrate the solenoid with other pneumatics units and test with that.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
